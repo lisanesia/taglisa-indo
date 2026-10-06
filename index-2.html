@@ -17,161 +17,160 @@ body{
   min-height:100vh;
   font-family:Arial,Helvetica,sans-serif;
   background:
-    radial-gradient(circle at top,#292929 0%,#111 38%,#050505 80%);
-  color:white;
-  padding:20px 14px 50px;
+    radial-gradient(circle at top,#29242f 0%,#0c0b0e 42%,#050507 100%);
+  color:#fff;
+  padding:25px 15px;
 }
 
 .container{
-  max-width:820px;
+  width:100%;
+  max-width:850px;
   margin:auto;
 }
 
-header{
+.header{
   text-align:center;
-  padding:35px 10px 28px;
+  margin-bottom:28px;
 }
 
-.brand{
-  color:#aaa;
-  font-size:11px;
+.logo{
+  font-size:14px;
   letter-spacing:5px;
-  font-weight:bold;
-  margin-bottom:15px;
+  color:#cfc7d8;
+  margin-bottom:10px;
 }
 
 h1{
-  font-size:clamp(34px,9vw,62px);
-  line-height:.95;
+  font-size:clamp(28px,6vw,52px);
   letter-spacing:2px;
+  font-weight:800;
 }
 
 .subtitle{
-  color:#999;
-  font-size:13px;
-  letter-spacing:1px;
-  margin-top:15px;
+  margin-top:10px;
+  color:#aaa;
+  font-size:14px;
 }
 
 .card{
-  background:rgba(18,18,18,.96);
-  border:1px solid #383838;
+  background:rgba(20,18,23,.88);
+  border:1px solid rgba(255,255,255,.12);
   border-radius:22px;
-  padding:24px;
-  box-shadow:0 25px 70px rgba(0,0,0,.55);
+  padding:22px;
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+  backdrop-filter:blur(12px);
 }
 
 label{
   display:block;
-  color:#aaa;
-  font-size:11px;
-  font-weight:bold;
-  letter-spacing:1.5px;
-  margin-bottom:8px;
-  text-transform:uppercase;
+  margin:15px 0 8px;
+  font-size:13px;
+  color:#cfcfcf;
 }
 
 input,
 select{
   width:100%;
-  background:#080808;
-  color:white;
-  border:1px solid #383838;
+  padding:14px 15px;
   border-radius:12px;
-  padding:14px;
-  font-size:15px;
-  margin-bottom:18px;
+  border:1px solid #38343d;
+  background:#111015;
+  color:white;
   outline:none;
+  font-size:14px;
 }
 
 input:focus,
 select:focus{
-  border-color:#aaa;
-}
-
-button{
-  border:0;
-  border-radius:12px;
-  padding:14px;
-  cursor:pointer;
-  font-weight:800;
-  transition:.2s;
-}
-
-button:hover{
-  transform:translateY(-1px);
+  border-color:#9d8aaa;
 }
 
 .generate{
   width:100%;
-  background:#eee;
-  color:#050505;
+  margin-top:20px;
+  padding:15px;
+  border:0;
+  border-radius:13px;
+  cursor:pointer;
+  font-weight:800;
   font-size:15px;
+  color:#fff;
+  background:linear-gradient(135deg,#76657f,#a28aab);
+  transition:.2s;
+}
+
+.generate:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.1);
 }
 
 .result{
+  margin-top:20px;
   display:none;
-  margin-top:25px;
 }
 
-.title{
-  color:#aaa;
-  font-size:11px;
-  font-weight:bold;
-  letter-spacing:1.5px;
-  margin:18px 0 8px;
-}
-
-.box{
-  background:#080808;
-  border:1px solid #333;
+.result-box{
+  background:#0d0c10;
+  border:1px solid #302c35;
   border-radius:15px;
   padding:18px;
-  line-height:1.75;
-  white-space:pre-line;
+  line-height:1.7;
+  white-space:pre-wrap;
   font-size:15px;
 }
 
+.tags{
+  margin-top:12px;
+  color:#c9b5d0;
+  line-height:1.7;
+}
+
 .buttons{
-  display:flex;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
   gap:10px;
   margin-top:12px;
 }
 
-.buttons button{
-  flex:1;
-  background:#272727;
-  color:white;
-  border:1px solid #444;
+button.secondary{
+  padding:12px 8px;
+  border:1px solid #39343f;
+  border-radius:11px;
+  background:#17151b;
+  color:#fff;
+  cursor:pointer;
+  font-weight:700;
 }
 
-.buttons .copy{
-  background:#eee;
-  color:#050505;
+button.secondary:hover{
+  background:#24202a;
+}
+
+.info{
+  text-align:center;
+  margin-top:16px;
+  color:#777;
+  font-size:11px;
 }
 
 .counter{
   text-align:center;
-  color:#666;
-  font-size:11px;
-  margin-top:14px;
-}
-
-footer{
-  text-align:center;
-  color:#555;
-  font-size:10px;
-  letter-spacing:2px;
-  margin-top:25px;
+  margin-top:15px;
+  color:#aaa;
+  font-size:12px;
 }
 
 @media(max-width:600px){
+  body{
+    padding:15px 10px;
+  }
+
   .card{
-    padding:18px;
+    padding:17px;
   }
 
   .buttons{
-    flex-direction:column;
+    grid-template-columns:1fr;
   }
 }
 </style>
@@ -181,122 +180,79 @@ footer{
 
 <div class="container">
 
-<header>
-  <div class="brand">LISANESIA • LILIES</div>
+  <div class="header">
+    <div class="logo">LISANESIA</div>
 
-  <h1>CAPTION<br>GENERATOR</h1>
+    <h1>LISA CAPTION GENERATOR</h1>
 
-  <div class="subtitle">
-    500 CAPTION • BAHASA INDONESIA
+    <div class="subtitle">
+      Caption generator khusus konten LISA
+    </div>
   </div>
-</header>
 
-<div class="card">
+  <div class="card">
 
-<label>Event</label>
+    <label for="event">Event / Momen</label>
+    <input
+      id="event"
+      type="text"
+      value="Louis Vuitton Fashion Show"
+      placeholder="Contoh: Louis Vuitton Fashion Show"
+    >
 
-<input
-  id="event"
-  value="Louis Vuitton Fashion Show"
-  placeholder="Contoh: Louis Vuitton Fashion Show"
->
+    <label for="name">Nama</label>
+    <input
+      id="name"
+      type="text"
+      value="LISA"
+      placeholder="Contoh: LISA"
+    >
 
-<label>Nama</label>
+    <label for="vibe">Pilih Gaya Caption</label>
 
-<input
-  id="name"
-  value="LISA"
-  placeholder="Contoh: LISA"
->
+    <select id="vibe">
+      <option value="elegan">Elegan & Mewah</option>
+      <option value="fashion">Fashion & Gaya</option>
+      <option value="powerful">Powerful & Ikonik</option>
+      <option value="hype">Hype & Support</option>
+      <option value="short">Singkat & Clean</option>
+    </select>
 
-<label>Kategori</label>
+    <button class="generate" onclick="generateCaption()">
+      ✨ GENERATE CAPTION
+    </button>
 
-<select id="category">
+    <div class="result" id="result">
 
-<option value="elegan">
-Elegan & Mewah
-</option>
+      <div class="result-box" id="caption"></div>
 
-<option value="fashion">
-Fashion & Gaya
-</option>
+      <div class="tags" id="tags">
+        #LISAxLVSS27 #LISAxLouisVuitton
+      </div>
 
-<option value="powerful">
-Powerful & Ikonik
-</option>
+      <div class="buttons">
+        <button class="secondary" onclick="copyCaption()">
+          COPY CAPTION
+        </button>
 
-<option value="hype">
-Hype & Support
-</option>
+        <button class="secondary" onclick="copyTags()">
+          COPY TAGS
+        </button>
 
-<option value="short">
-Singkat & Punchy
-</option>
+        <button class="secondary" onclick="copyAll()">
+          COPY ALL
+        </button>
+      </div>
 
-</select>
+      <div class="counter" id="counter"></div>
 
-<button
-  class="generate"
-  onclick="generateCaption()"
->
-✨ GENERATE CAPTION
-</button>
+    </div>
 
+  </div>
 
-<div
-  class="result"
-  id="result"
->
-
-<div class="title">
-CAPTION
-</div>
-
-<div
-  class="box"
-  id="caption"
-></div>
-
-
-<div class="title">
-HASHTAG
-</div>
-
-<div class="box">
-#LISAxLVSS27
-#LISAxLouisVuitton
-</div>
-
-
-<div class="buttons">
-
-<button onclick="generateCaption()">
-🎲 CAPTION LAIN
-</button>
-
-<button
-  class="copy"
-  onclick="copyAll()"
->
-📋 SALIN SEMUA
-</button>
-
-</div>
-
-
-<div
-  class="counter"
-  id="counter"
-></div>
-
-</div>
-
-</div>
-
-
-<footer>
-LALISA MANOBAN • LISANESIA
-</footer>
+  <div class="info">
+    Made for LILIES • LISA fan content
+  </div>
 
 </div>
 
@@ -304,321 +260,409 @@ LALISA MANOBAN • LISANESIA
 <script>
 
 /* =====================================================
-   CAPTION DATABASE
-   5 KATEGORI
-   MASING-MASING 100 CAPTION
+   DATA CAPTION
+   5 KATEGORI × 20 CAPTION DASAR
+   SISTEM AKAN MEMBUAT 500 VARIASI
 ===================================================== */
 
-const database = {
+const captionData = {
 
-elegan: [
+  elegan: [
 
-"LISA hadir dengan pesona yang begitu elegan.",
-"LISA melangkah dengan aura yang penuh keanggunan.",
-"Semua mata tertuju pada LISA.",
-"LISA kembali menghadirkan pesona yang luar biasa.",
-"Keanggunan LISA benar-benar mencuri perhatian.",
-"LISA membawa aura mewah yang begitu natural.",
-"Pesona LISA selalu berhasil meninggalkan kesan.",
-"LISA tampil dengan aura yang penuh kelas.",
-"Setiap langkah LISA terasa begitu elegan.",
-"LISA membuat momen ini terasa semakin istimewa.",
-"Keanggunan LISA tidak pernah gagal memukau.",
-"LISA membawa sentuhan mewah dalam setiap langkah.",
-"Aura LISA terasa begitu kuat dan berkelas.",
-"LISA kembali menciptakan momen yang indah.",
-"Pesona LISA benar-benar sulit untuk diabaikan.",
-"LISA membuat kemewahan terlihat begitu natural.",
-"Setiap detail penampilan LISA terasa sempurna.",
-"LISA hadir dengan ketenangan yang begitu elegan.",
-"Keanggunan LISA berbicara melalui setiap langkahnya.",
-"LISA selalu punya cara untuk membuat momen terasa spesial."
+    "LISA kembali membuktikan bahwa elegansi bukan sekadar gaya, tapi sebuah aura yang sulit ditandingi.",
+    "Ada sesuatu yang berbeda ketika LISA hadir dalam balutan Louis Vuitton. Elegannya benar-benar memikat.",
+    "LISA membawa definisi baru tentang kemewahan dengan penampilannya yang begitu berkelas.",
+    "Setiap langkah LISA terasa seperti perpaduan sempurna antara keanggunan dan kemewahan.",
+    "LISA dan Louis Vuitton adalah perpaduan yang terasa begitu natural, mewah, dan ikonik.",
+    "Keanggunan LISA kali ini benar-benar mencuri perhatian sejak pandangan pertama.",
+    "LISA membuktikan bahwa penampilan sederhana sekalipun bisa terlihat luar biasa ketika dibawakan dengan aura yang tepat.",
+    "Pesona LISA dalam Louis Vuitton Fashion Show benar-benar sulit untuk dialihkan.",
+    "LISA hadir dengan aura elegan yang membuat seluruh penampilannya terasa semakin istimewa.",
+    "Kalau elegansi punya wajah, malam ini jawabannya adalah LISA.",
+    "LISA terlihat begitu mahal tanpa harus berlebihan. Setiap detail terasa sempurna.",
+    "Penampilan LISA kali ini adalah definisi dari elegan, modern, dan berkelas.",
+    "LISA sekali lagi menunjukkan bagaimana sebuah fashion moment bisa berubah menjadi sesuatu yang ikonik.",
+    "Louis Vuitton semakin terlihat sempurna ketika LISA yang membawakan auranya.",
+    "LISA membawa energi mewah yang begitu kuat di setiap kemunculannya.",
+    "Tak perlu banyak kata, penampilan LISA sudah cukup untuk menunjukkan kelasnya.",
+    "LISA tampil dengan pesona yang tenang tetapi tetap mampu menarik seluruh perhatian.",
+    "Elegansi LISA terasa dari setiap detail penampilannya.",
+    "LISA berhasil membuat Louis Vuitton Fashion Show terasa semakin spesial.",
+    "Penampilan LISA kali ini benar-benar memancarkan aura perempuan berkelas."
 
-],
+  ],
 
-fashion: [
+  fashion: [
 
-"LISA kembali menciptakan fashion moment yang tak terlupakan.",
-"Gaya LISA selalu punya karakter yang kuat.",
-"LISA membawa style khasnya ke dalam momen ini.",
-"Fashion terasa semakin istimewa ketika LISA hadir.",
-"LISA tahu bagaimana membuat sebuah penampilan menjadi pernyataan.",
-"Setiap detail gaya LISA terlihat begitu berkarakter.",
-"LISA kembali menunjukkan kemampuan fashion-nya.",
-"Gaya LISA selalu berhasil mencuri perhatian.",
-"LISA membuat setiap look terasa hidup.",
-"Fashion dan LISA memang kombinasi yang sempurna.",
-"LISA kembali memberikan inspirasi melalui penampilannya.",
-"Setiap langkah LISA terasa seperti fashion statement.",
-"Gaya LISA selalu punya daya tarik tersendiri.",
-"LISA membawa energi fashion yang begitu kuat.",
-"Penampilan LISA kali ini benar-benar berkesan.",
-"LISA membuat fashion terlihat effortless.",
-"Setiap detail penampilan LISA terasa begitu khas.",
-"LISA kembali menunjukkan sisi fashion icon-nya.",
-"Gaya LISA memang sulit untuk disamakan.",
-"LISA berhasil menghidupkan setiap fashion moment."
+    "LISA kembali menunjukkan bahwa fashion adalah salah satu cara terbaik untuk mengekspresikan karakter.",
+    "Setiap detail look LISA terasa begitu tepat dan berhasil menciptakan fashion moment yang kuat.",
+    "LISA benar-benar tahu bagaimana cara membuat sebuah outfit terlihat semakin hidup.",
+    "Fashion look LISA kali ini punya karakter yang kuat tanpa terlihat berlebihan.",
+    "LISA kembali membuktikan kenapa dirinya selalu menarik perhatian di dunia fashion.",
+    "Outfit, aura, dan attitude LISA menyatu menjadi satu penampilan yang luar biasa.",
+    "LISA membuat fashion terlihat effortless tetapi tetap penuh karakter.",
+    "Setiap detail dari penampilan LISA terasa seperti bagian dari sebuah karya seni.",
+    "LISA membawa gaya personalnya ke dalam dunia Louis Vuitton dengan begitu sempurna.",
+    "Fashion moment LISA kali ini benar-benar layak mendapatkan perhatian.",
+    "LISA menunjukkan bagaimana sebuah outfit bisa memiliki cerita hanya dari cara seseorang membawakannya.",
+    "Tidak hanya memakai Louis Vuitton, LISA benar-benar memberikan karakter pada setiap look.",
+    "Gaya LISA selalu punya sesuatu yang membuatnya mudah dikenali.",
+    "Penampilan LISA kali ini membuktikan bahwa fashion dan kepercayaan diri adalah kombinasi yang kuat.",
+    "LISA mampu membuat setiap kamera menemukan alasan untuk terus mengarah kepadanya.",
+    "Fashion look LISA terasa modern, berani, dan tetap elegan.",
+    "LISA kembali memberikan inspirasi fashion lewat penampilannya yang penuh karakter.",
+    "Tidak ada detail yang terasa sia-sia dalam fashion look LISA kali ini.",
+    "LISA berhasil menjadikan sebuah fashion show sebagai momen yang tidak mudah dilupakan.",
+    "Ketika LISA hadir, fashion moment terasa punya energi yang berbeda."
 
-],
+  ],
 
-powerful: [
+  powerful: [
 
-"LISA hadir, dan sorotan langsung mengikutinya.",
-"LISA mengambil alih seluruh perhatian.",
-"Momen ini benar-benar milik LISA.",
-"LISA datang dengan star power yang luar biasa.",
-"Semua mata tertuju pada LISA.",
-"LISA kembali menguasai sorotan.",
-"Setiap langkah LISA membawa energi seorang ikon.",
-"LISA tidak perlu berusaha untuk menjadi pusat perhatian.",
-"Aura LISA benar-benar tidak bisa diabaikan.",
-"LISA datang dan langsung mengubah suasana.",
-"Kepercayaan diri LISA terlihat begitu kuat.",
-"LISA memiliki magnet yang sulit untuk ditandingi.",
-"Setiap gerakan LISA terasa penuh kekuatan.",
-"LISA kembali menunjukkan star power-nya.",
-"Sorotan seolah selalu menemukan LISA.",
-"LISA membuat momen ini terasa semakin besar.",
-"Nama LISA kembali menjadi pusat perhatian.",
-"LISA membawa energi yang benar-benar berbeda.",
-"Tak ada yang bisa mengabaikan aura LISA.",
-"LISA memang tahu bagaimana menguasai sebuah momen."
+    "LISA datang bukan hanya untuk hadir, tetapi untuk meninggalkan sebuah kesan.",
+    "Aura LISA benar-benar memenuhi ruangan begitu dirinya muncul.",
+    "LISA kembali membuktikan bahwa dirinya punya kekuatan untuk menguasai setiap fashion moment.",
+    "Satu kemunculan LISA sudah cukup untuk membuat seluruh perhatian tertuju kepadanya.",
+    "LISA selalu membawa energi yang sulit diabaikan.",
+    "Powerful, percaya diri, dan penuh karakter. Itulah LISA.",
+    "LISA tidak perlu berusaha terlalu keras untuk menjadi pusat perhatian.",
+    "Ketika LISA muncul, suasana langsung terasa berbeda.",
+    "LISA kembali menciptakan sebuah momen yang terasa jauh lebih besar dari sekadar fashion show.",
+    "Aura superstar LISA benar-benar terlihat malam ini.",
+    "LISA menunjukkan bahwa kekuatan seorang fashion icon tidak hanya berasal dari pakaian.",
+    "Setiap langkah LISA terasa penuh keyakinan dan karakter.",
+    "LISA punya kemampuan luar biasa untuk membuat momen biasa menjadi ikonik.",
+    "Penampilan LISA kali ini benar-benar menunjukkan level seorang global fashion icon.",
+    "LISA membawa energi besar yang membuat seluruh momen terasa semakin hidup.",
+    "Tidak perlu banyak gerakan, aura LISA sudah berbicara dengan sendirinya.",
+    "LISA kembali mengambil alih perhatian dengan caranya sendiri.",
+    "Setiap kamera seolah tahu siapa yang harus dicari ketika LISA datang.",
+    "LISA membuktikan bahwa presence bisa menjadi kekuatan terbesar dalam sebuah fashion moment.",
+    "Ikonik adalah kata yang paling tepat untuk menggambarkan penampilan LISA kali ini."
 
-],
+  ],
 
-hype: [
+  hype: [
 
-"LISA SUDAH TIBA! 🔥",
-"INI MOMEN LISA!",
-"SEMUA LIHAT LISA! 🖤",
-"AYO RAMAIKAN MOMEN LISA!",
-"LISA KITA SUDAH HADIR! ✨",
-"MOMEN BESAR LISA DIMULAI!",
-"SEMUA DUKUNGAN UNTUK LISA!",
-"LILIES, WAKTUNYA MERAMAIKAN LISA!",
-"YUK BUAT MOMEN INI SEMAKIN RAMAI!",
-"LISA KEMBALI MEMBUAT KITA BANGGA!",
-"MARI RAYAKAN LISA BERSAMA!",
-"TERUS DUKUNG LISA! 🔥",
-"SEMUA CINTA UNTUK LISA!",
-"LISA SEDANG BERSINAR!",
-"YUK KIRIMKAN ENERGI TERBAIK UNTUK LISA!",
-"JANGAN BIARKAN MOMEN INI LEWAT!",
-"MARI BUAT NAMA LISA SEMAKIN RAMAI!",
-"LILIES SELALU SIAP UNTUK LISA!",
-"INI SAATNYA MERAYAKAN LISA!",
-"TERUS BERSINAR, LISA! ✨"
+    "LISA GILA SIH 😭🔥 penampilan kali ini benar-benar luar biasa!",
+    "Lihat siapa yang kembali membuat timeline heboh! LISA memang beda.",
+    "LISA kembali datang dan langsung memberikan fashion moment yang luar biasa!",
+    "Gue belum siap lihat LISA sekece ini 😭",
+    "LISA benar-benar tidak pernah gagal membuat kita bangga!",
+    "Satu kata untuk LISA hari ini: GILA.",
+    "LISA muncul, timeline langsung ramai. Sesederhana itu.",
+    "Bangga banget lihat LISA terus bersinar di panggung fashion dunia.",
+    "LISA benar-benar membawa level yang berbeda setiap kali hadir.",
+    "Ini alasan kenapa kita selalu excited setiap ada LISA fashion moment!",
+    "LISA kembali membuat kita semua kehilangan kata-kata 😭🔥",
+    "Tidak ada hari biasa kalau LISA sudah muncul di fashion show.",
+    "LISA datang membawa aura superstar dan kita semua langsung heboh.",
+    "Gue benar-benar nggak bisa berhenti lihat penampilan LISA kali ini.",
+    "LISA sekali lagi membuktikan bahwa dia memang punya sesuatu yang spesial.",
+    "Momen LISA hari ini wajib masuk timeline kita semua!",
+    "Bangga, kagum, dan excited dalam satu waktu. LISA memang luar biasa.",
+    "LISA benar-benar membuat fashion show ini semakin seru untuk diikuti.",
+    "Mari ramaikan momen LISA hari ini! Dia pantas mendapatkan semua perhatian.",
+    "LISA tetap menjadi LISA: bersinar, kuat, dan selalu mencuri perhatian."
 
-],
+  ],
 
-short: [
+  short: [
 
-"LISA. Ikonik.",
-"LISA adalah momennya.",
-"Semua mata pada LISA.",
-"LISA menguasai sorotan.",
-"Pure LISA energy.",
-"Fashion icon LISA.",
-"LISA sedang bersinar.",
-"Ikonik dari setiap sudut.",
-"LISA, selalu berkelas.",
-"Satu lagi LISA moment.",
-"LISA memang beda.",
-"Star power: LISA.",
-"LISA kembali mencuri perhatian.",
-"Satu kata: IKONIK.",
-"LISA tanpa tanding.",
-"Aura LISA.",
-"LISA selalu menjadi momen.",
-"Simply LISA.",
-"LISA is the moment.",
-"Ikon tetap ikon."
+    "LISA. Elegan. Ikonik.",
+    "LISA benar-benar bersinar hari ini.",
+    "Aura LISA tidak main-main.",
+    "LISA selalu punya cara untuk mencuri perhatian.",
+    "Simply LISA.",
+    "LISA looks absolutely iconic.",
+    "LISA membawa aura yang berbeda.",
+    "Fashion moment milik LISA.",
+    "LISA benar-benar stunning.",
+    "Ikonik sejak langkah pertama.",
+    "LISA never misses.",
+    "Aura superstar LISA.",
+    "LISA kembali mencuri perhatian.",
+    "Satu nama, LISA.",
+    "LISA dan Louis Vuitton. Perfect.",
+    "Elegansi dalam satu nama: LISA.",
+    "LISA benar-benar punya kelas.",
+    "Another iconic LISA moment.",
+    "LISA shines differently.",
+    "Always proud of LISA."
 
-]
+  ]
 
 };
 
 
 /* =====================================================
-   MEMBUAT 100 CAPTION PER KATEGORI
-   DARI 20 BASE CAPTION
+   BUAT 100 VARIASI PER KATEGORI
 ===================================================== */
 
-function buildCaptions(base, event, name){
+const captions = {};
 
-  const result=[];
+const prefixes = [
+  "",
+  "Hari ini, ",
+  "Sekali lagi, ",
+  "Benar-benar, ",
+  "Dan seperti biasa, ",
+  "Tidak diragukan lagi, ",
+  "Sekali lihat saja sudah jelas, ",
+  "Malam ini, ",
+  "Di momen ini, ",
+  "Sekarang kita tahu bahwa ",
+  "Jujur saja, ",
+  "Harus diakui, ",
+  "Satu hal yang pasti, ",
+  "Seperti biasa, ",
+  "Sulit untuk menyangkal bahwa ",
+  "Semakin dilihat, semakin jelas bahwa ",
+  "Momen ini kembali membuktikan bahwa ",
+  "Tidak pernah gagal, ",
+  "Yang paling menarik adalah ",
+  "Dan sekali lagi kita melihat bahwa "
+];
 
-  const endings=[
-    "✨",
-    "🖤",
-    "🔥",
-    "Benar-benar tak terlupakan.",
-    "Satu lagi momen ikonik.",
-  ];
+const endings = [
+  "",
+  " ✨",
+  " 🤍",
+  " 🖤",
+  " 🔥",
+  " 👑",
+  " 💫",
+  " ✨🤍",
+  " 🖤✨",
+  " 🔥✨",
+  " 👑✨",
+  " 💫🤍",
+  " — benar-benar ikonik.",
+  " — sebuah fashion moment yang luar biasa.",
+  " — sulit untuk dilupakan.",
+  " — benar-benar mencuri perhatian.",
+  " — dan kita semua tahu alasannya.",
+  " — LISA memang selalu punya caranya sendiri.",
+  " — sekali lagi, sebuah momen yang luar biasa.",
+  " — pantas mendapatkan semua perhatian."
+];
 
-  for(let i=0;i<base.length;i++){
 
-    for(let j=0;j<5;j++){
+Object.keys(captionData).forEach(category => {
 
-      let caption =
-        base[i]
-        .replaceAll("LISA",name)
-        + " " + endings[j];
+  captions[category] = [];
 
-      result.push(caption);
+  let base = captionData[category];
 
+  for(let i = 0; i < base.length; i++){
+
+    for(let j = 0; j < prefixes.length; j++){
+
+      let text = prefixes[j] + base[i];
+
+      /*
+        Untuk mencegah kalimat seperti:
+        "Hari ini, LISA..."
+        menjadi aneh pada caption yang sudah dimulai
+        dengan kata tertentu.
+      */
+
+      if(j === 0){
+        text = base[i];
+      }
+
+      let ending = endings[(i + j) % endings.length];
+
+      let finalText = text + ending;
+
+      if(!captions[category].includes(finalText)){
+        captions[category].push(finalText);
+      }
+
+      if(captions[category].length >= 100){
+        break;
+      }
     }
 
+    if(captions[category].length >= 100){
+      break;
+    }
   }
 
-  return result.slice(0,100);
-}
+});
 
 
 /* =====================================================
-   ANTI REPEAT
+   SISTEM ANTI REPEAT
 ===================================================== */
 
-const used = {
-  elegan:[],
-  fashion:[],
-  powerful:[],
-  hype:[],
-  short:[]
+const usedIndexes = {
+  elegan: new Set(),
+  fashion: new Set(),
+  powerful: new Set(),
+  hype: new Set(),
+  short: new Set()
 };
 
 
-let currentCaption="";
-
+/* =====================================================
+   GENERATE CAPTION
+===================================================== */
 
 function generateCaption(){
 
-  const category =
-    document.getElementById("category").value;
-
-  const event =
-    document.getElementById("event").value.trim()
-    || "Louis Vuitton Fashion Show";
+  const category = document.getElementById("vibe").value;
 
   const name =
-    document.getElementById("name").value.trim()
-    || "LISA";
+    document.getElementById("name").value.trim() || "LISA";
+
+  const event =
+    document.getElementById("event").value.trim() ||
+    "Louis Vuitton Fashion Show";
 
 
-  const captions =
-    buildCaptions(
-      database[category],
-      event,
-      name
-    );
+  /*
+    Kalau semua caption kategori sudah dipakai,
+    reset supaya bisa mulai lagi.
+  */
 
-
-  /* RESET SETELAH 100 CAPTION HABIS */
-
-  if(
-    used[category].length >= captions.length
-  ){
-
-    used[category]=[];
-
+  if(usedIndexes[category].size >= captions[category].length){
+    usedIndexes[category].clear();
   }
 
 
-  let index;
-
+  let randomIndex;
 
   do{
 
-    index =
-      Math.floor(
-        Math.random()*captions.length
-      );
+    randomIndex =
+      Math.floor(Math.random() * captions[category].length);
 
-  }while(
-    used[category].includes(index)
-  );
+  }while(usedIndexes[category].has(randomIndex));
 
 
-  used[category].push(index);
+  usedIndexes[category].add(randomIndex);
 
 
-  currentCaption =
-    captions[index]
-    + "\n\n"
-    + hashtags();
+  let selected =
+    captions[category][randomIndex];
 
 
-  document.getElementById("caption")
-    .textContent =
-    captions[index];
+  /*
+    Ganti nama dan event kalau user mengubah input.
+  */
+
+  selected =
+    selected.replaceAll("LISA", name);
+
+  selected =
+    selected.replaceAll(
+      "Louis Vuitton Fashion Show",
+      event
+    );
 
 
-  document.getElementById("result")
-    .style.display="block";
+  document.getElementById("caption").textContent =
+    selected;
 
 
-  document.getElementById("counter")
-    .textContent =
-    "Caption terpakai: "
-    + used[category].length
-    + " / 100";
+  document.getElementById("tags").textContent =
+    "#LISAxLVSS27 #LISAxLouisVuitton";
+
+
+  document.getElementById("result").style.display =
+    "block";
+
+
+  document.getElementById("counter").textContent =
+    `Caption ${usedIndexes[category].size} / ${captions[category].length} digunakan dalam kategori ini`;
 
 }
 
 
 /* =====================================================
-   HASHTAG
+   COPY CAPTION
 ===================================================== */
 
-function hashtags(){
+function copyCaption(){
 
-  return "#LISAxLVSS27 #LISAxLouisVuitton";
+  const text =
+    document.getElementById("caption").textContent;
+
+  navigator.clipboard.writeText(text)
+    .then(() => {
+
+      alert("Caption berhasil disalin! 🔥");
+
+    });
 
 }
 
 
 /* =====================================================
-   COPY
+   COPY TAGS
+===================================================== */
+
+function copyTags(){
+
+  const tags =
+    "#LISAxLVSS27 #LISAxLouisVuitton";
+
+  navigator.clipboard.writeText(tags)
+    .then(() => {
+
+      alert("Hashtag berhasil disalin! 🔥");
+
+    });
+
+}
+
+
+/* =====================================================
+   COPY ALL
 ===================================================== */
 
 function copyAll(){
 
-  if(!currentCaption){
-    return;
-  }
+  const caption =
+    document.getElementById("caption").textContent;
 
-  navigator.clipboard.writeText(
-    currentCaption
-  )
-  .then(()=>{
+  const tags =
+    "#LISAxLVSS27 #LISAxLouisVuitton";
 
-    alert(
-      "Berhasil disalin! ✨"
-    );
 
-  })
-  .catch(()=>{
+  const all =
+    caption + "\n\n" + tags;
 
-    const textarea =
-      document.createElement("textarea");
 
-    textarea.value=currentCaption;
+  navigator.clipboard.writeText(all)
+    .then(() => {
 
-    document.body.appendChild(textarea);
+      alert("Caption + hashtag berhasil disalin! 🔥");
 
-    textarea.select();
-
-    document.execCommand("copy");
-
-    textarea.remove();
-
-    alert(
-      "Berhasil disalin! ✨"
-    );
-
-  });
+    });
 
 }
+
+
+/* =====================================================
+   ENTER = GENERATE
+===================================================== */
+
+document.addEventListener("keydown", function(e){
+
+  if(e.key === "Enter"){
+
+    const active =
+      document.activeElement.tagName;
+
+    if(active === "INPUT" || active === "SELECT"){
+      generateCaption();
+    }
+
+  }
+
+});
 
 </script>
 
